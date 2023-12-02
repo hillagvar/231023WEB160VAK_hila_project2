@@ -31,7 +31,29 @@ function controlBackground(isOn) {
   }
 }
 
-for (let i = 0; i < links.length; i++) {
+if (window.innerWidth < 768) {
+  for (let j = 0; j < links.length; j++) {
+    links[j].addEventListener("click", function () {
+      menus[j].classList.toggle("visible");
+    });
+  }
+  
+  let burger = document.querySelector(".mobile-menu");
+  let topMenu = document.querySelector(".top-main-menu");
+  
+  topMenu.classList.add("hidden");
+  
+  burger.addEventListener("click", function () {
+    topMenu.classList.toggle("hidden");
+    topMenu.classList.toggle("visible");
+  
+    if (burger.getAttribute("src") === "images/mobile-menu.svg") {
+      burger.setAttribute("src", "images/close.svg");
+    } else {
+      burger.setAttribute("src", "images/mobile-menu.svg");
+    }
+  });
+} else { for (let i = 0; i < links.length; i++) {
   links[i].addEventListener("click", function () {
     let currentItem = menus[i];
     let menusWithoutCurrentItem = menus.filter(function (x) {
@@ -49,6 +71,9 @@ for (let i = 0; i < links.length; i++) {
     menus[i].classList.toggle("visible");
   });
 }
+  
+}
+
 
 let heartCheckboxes = document.querySelectorAll(".heart-form input");
 let heartImages = document.querySelectorAll(".heart-icon");

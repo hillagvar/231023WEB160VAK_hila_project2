@@ -527,20 +527,8 @@
       </footer>
 
       <script src="scripts/splide.min.js"></script>
-      <script>
-        if (window.innerWidth < 768) {
-          src = "scripts/mobile-script.js";
-        } else {
-          src = "scripts/script.js";
-        }
-
-        function loadScriptFile(src) {
-          const script = document.createElement("script");
-          script.setAttribute("src", src);
-          document.body.append(script);
-        }
-        loadScriptFile(src);
-      </script>
+      <script src="scripts/script.js"></script>
+      
     </div>
   </body>
 </html>
