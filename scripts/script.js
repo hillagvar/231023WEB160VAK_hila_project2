@@ -1,9 +1,7 @@
 let collectionLink = document.querySelector(".top-main-menu-1 > a");
 let newInLink = document.querySelector(".top-main-menu-2 > a");
 let plusSizeLink = document.querySelector(".top-main-menu-4 > a");
-let sustainabilityLink = document.querySelector(
-  ".top-main-menu-5 > a"
-);
+let sustainabilityLink = document.querySelector(".top-main-menu-5 > a");
 
 let links = [collectionLink, newInLink, plusSizeLink, sustainabilityLink];
 
@@ -37,13 +35,11 @@ if (window.innerWidth < 768) {
       menus[j].classList.toggle("visible");
     });
   }
-  
+
   let burger = document.querySelector(".mobile-menu");
   let topMenu = document.querySelector(".top-main-menu");
-  
-  
-  burger.addEventListener("click", function () {
 
+  burger.addEventListener("click", function () {
     if (topMenu.style.display === "block") {
       topMenu.style.display = "none";
     } else {
@@ -56,28 +52,26 @@ if (window.innerWidth < 768) {
       burger.setAttribute("src", "images/mobile-menu.svg");
     }
   });
-} else { for (let i = 0; i < links.length; i++) {
-  links[i].addEventListener("click", function () {
-    let currentItem = menus[i];
-    let menusWithoutCurrentItem = menus.filter(function (x) {
-      return x !== currentItem;
+} else {
+  for (let i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", function () {
+      let currentItem = menus[i];
+      let menusWithoutCurrentItem = menus.filter(function (x) {
+        return x !== currentItem;
+      });
+
+      for (let j = 0; j < menusWithoutCurrentItem.length; j++) {
+        menusWithoutCurrentItem[j].classList.remove("visible");
+        controlBackground(
+          menus[i].classList.contains("visible") ||
+            menusWithoutCurrentItem[j].classList.contains("visible")
+        );
+      }
+
+      menus[i].classList.toggle("visible");
     });
-
-    for (let j = 0; j < menusWithoutCurrentItem.length; j++) {
-      menusWithoutCurrentItem[j].classList.remove("visible");
-      controlBackground(
-        menus[i].classList.contains("visible") ||
-          menusWithoutCurrentItem[j].classList.contains("visible")
-      );
-    }
-
-    menus[i].classList.toggle("visible");
-  });
+  }
 }
-
-  
-}
-
 
 let heartCheckboxes = document.querySelectorAll(".heart-form input");
 let heartImages = document.querySelectorAll(".heart-icon");
@@ -128,7 +122,6 @@ for (let i = 0; i < expandableTitles.length; i++) {
   });
 }
 
-
 if (window.innerWidth < 768) {
   var splide = new Splide(".splide", {
     perMove: 1,
@@ -137,18 +130,17 @@ if (window.innerWidth < 768) {
     fixedWidth: "152px",
     height: "296px",
   });
-  
+
   splide.mount();
+} else {
+  var splide = new Splide(".splide", {
+    perMove: 1,
+    gap: "24px",
+    pagination: false,
+    arrows: false,
+    fixedWidth: "288px",
+    height: "493px",
+  });
 
-} else { var splide = new Splide(".splide", {
-  perMove: 1,
-  gap: "24px",
-  pagination: false,
-  arrows: false,
-  fixedWidth: "288px",
-  height: "493px",
-});
-
-splide.mount();
-
+  splide.mount();
 }
