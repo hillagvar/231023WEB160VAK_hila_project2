@@ -41,12 +41,15 @@ if (window.innerWidth < 768) {
   let burger = document.querySelector(".mobile-menu");
   let topMenu = document.querySelector(".top-main-menu");
   
-  topMenu.classList.add("hidden");
   
   burger.addEventListener("click", function () {
-    topMenu.classList.toggle("hidden");
-    topMenu.classList.toggle("visible");
-  
+
+    if (topMenu.style.display === "block") {
+      topMenu.style.display = "none";
+    } else {
+      topMenu.style.display = "block";
+    }
+
     if (burger.getAttribute("src") === "images/mobile-menu.svg") {
       burger.setAttribute("src", "images/close.svg");
     } else {
