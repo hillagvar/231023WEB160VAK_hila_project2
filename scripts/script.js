@@ -122,6 +122,7 @@ for (let i = 0; i < expandableTitles.length; i++) {
   });
 }
 
+
 if (window.innerWidth < 768) {
   var splide = new Splide(".splide", {
     perMove: 1,
