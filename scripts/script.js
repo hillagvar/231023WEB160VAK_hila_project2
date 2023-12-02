@@ -74,6 +74,7 @@ if (window.innerWidth < 768) {
     menus[i].classList.toggle("visible");
   });
 }
+
   
 }
 
@@ -127,7 +128,19 @@ for (let i = 0; i < expandableTitles.length; i++) {
   });
 }
 
-var splide = new Splide(".splide", {
+
+if (window.innerWidth < 768) {
+  var splide = new Splide(".splide", {
+    perMove: 1,
+    gap: "16px",
+    arrows: false,
+    fixedWidth: "152px",
+    height: "296px",
+  });
+  
+  splide.mount();
+
+} else { var splide = new Splide(".splide", {
   perMove: 1,
   gap: "24px",
   pagination: false,
@@ -137,3 +150,5 @@ var splide = new Splide(".splide", {
 });
 
 splide.mount();
+
+}
