@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="stylesheet" href="styles/splide-core.min.css" />
+    <link rel="stylesheet" href="styles/splide.min.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link
       rel="stylesheet"
@@ -206,24 +207,31 @@
           <div class="product">
             <div class="product-photos">
               <div class="thumbnail-section">
-                <div class="product-thumb thumb-1">
-                  <div class="thumb-overlay"></div>
-                </div>
-                <div class="product-thumb thumb-2">
-                  <div class="thumb-overlay"></div>
-                </div>
-                <div class="product-thumb thumb-3">
-                  <div class="thumb-overlay"></div>
-                </div>
-                <div class="product-thumb thumb-4">
-                  <div class="thumb-overlay"></div>
-                </div>
-                <div class="product-thumb thumb-5">
-                  <div class="thumb-overlay"></div>
-                </div>
+                <section class="splide" id="splide2">
+                  <div class="splide__track">
+                    <ul class="splide__list">
+                      <li class="splide__slide"><div class="product-thumb thumb-1">
+                        <div class="thumb-overlay"></div>
+                      </div></li>
+                      <li class="splide__slide"><div class="product-thumb thumb-2">
+                        <div class="thumb-overlay"></div>
+                      </div></li>
+                      <li class="splide__slide"><div class="product-thumb thumb-3">
+                        <div class="thumb-overlay"></div>
+                      </div></li>
+                      <li class="splide__slide"><div class="product-thumb thumb-4">
+                        <div class="thumb-overlay"></div>
+                      </div></li>
+                      <li class="splide__slide"><div class="product-thumb thumb-5">
+                        <div class="thumb-overlay"></div>
+                      </div></li>
+                    </ul>
+                  </div>
+                </section>
               </div>
 
               <div class="product-photo"></div>
+
             </div>
 
             <div class="product-options">

@@ -15,9 +15,11 @@ let menus = [collectionMenu, newInMenu, plusSizeMenu, sustainabilityMenu];
 let overlay = document.querySelector(".overlay");
 let content = document.querySelector(".content");
 
+let burger = document.querySelector(".mobile-menu");
+let topMenu = document.querySelector(".top-main-menu");
+
 function controlBackground(isOn) {
-  let body = document.querySelector("body");
-  let overlayHeight = body.offsetHeight - 110;
+  let overlayHeight = document.body.offsetHeight - 110;
 
   if (isOn) {
     overlay.classList.remove("visible");
@@ -35,9 +37,6 @@ if (window.innerWidth < 768) {
       menus[j].classList.toggle("visible");
     });
   }
-
-  let burger = document.querySelector(".mobile-menu");
-  let topMenu = document.querySelector(".top-main-menu");
 
   burger.addEventListener("click", function () {
     if (topMenu.style.display === "block") {
@@ -67,7 +66,6 @@ if (window.innerWidth < 768) {
             menusWithoutCurrentItem[j].classList.contains("visible")
         );
       }
-
       menus[i].classList.toggle("visible");
     });
   }
@@ -122,19 +120,8 @@ for (let i = 0; i < expandableTitles.length; i++) {
   });
 }
 
-
-if (window.innerWidth < 768) {
-  var splide = new Splide(".splide", {
-    perMove: 1,
-    gap: "16px",
-    arrows: false,
-    fixedWidth: "152px",
-    height: "296px",
-  });
-
-  splide.mount();
-} else {
-  var splide = new Splide(".splide", {
+function loadSplide1() {
+  var splide = new Splide("#splide1", {
     perMove: 1,
     gap: "24px",
     pagination: false,
@@ -144,4 +131,59 @@ if (window.innerWidth < 768) {
   });
 
   splide.mount();
+}
+
+function loadSplide1mobile() {
+  var splide = new Splide("#splide1", {
+    perMove: 1,
+    gap: "16px",
+    arrows: false,
+    fixedWidth: "152px",
+    height: "296px",
+  });
+
+  splide.mount();
+}
+
+function loadSplide2() {
+  var splide2 = new Splide("#splide2", {
+    direction: "ttb",
+    perMove: 1,
+    gap: "16px",
+    pagination: false,
+    fixedWidth: "100%",
+    height: "512px",
+    autoHeight: true,
+  });
+
+  splide2.mount();
+}
+
+function loadSplide2mobile() {
+  var splide2 = new Splide("#splide2", {
+    perMove: 1,
+    gap: "16px",
+    arrows: false,
+    fixedWidth: "100%",
+    height: "512px",
+    autoHeight: true,
+  });
+
+  splide2.mount();
+}
+
+if (document.getElementById("splide2") !== null) {
+  if (window.innerWidth < 768) {
+    loadSplide2mobile();
+  } else {
+    loadSplide2();
+  }
+}
+
+if (document.getElementById("splide1") !== null) {
+  if (window.innerWidth < 768) {
+    loadSplide1mobile();
+  } else {
+    loadSplide1();
+  }
 }
