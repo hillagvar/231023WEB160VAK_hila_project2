@@ -1255,13 +1255,21 @@ footer button img {
 }
 
 @media only screen and (max-width: 1199px) {
-
   .hero {
     background-position: left;
     background-image: url("../images/tablet-hero.png");
   }
 
-  .nav-content, .collection-menu-content, .newin-menu-content, .plussize-menu-content, .sustainability-menu-content, .main-content-1, .main-content-2, .footer-content, .hero-content, .product-content-1 {
+  .nav-content,
+  .collection-menu-content,
+  .newin-menu-content,
+  .plussize-menu-content,
+  .sustainability-menu-content,
+  .main-content-1,
+  .main-content-2,
+  .footer-content,
+  .hero-content,
+  .product-content-1 {
     width: 90%;
   }
 
@@ -1274,7 +1282,8 @@ footer button img {
     gap: 16px;
   }
 
-  .top-main-menu a, .top-main-menu p {
+  .top-main-menu a,
+  .top-main-menu p {
     font-size: 14px;
   }
 
