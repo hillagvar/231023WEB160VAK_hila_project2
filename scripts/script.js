@@ -165,8 +165,7 @@ function loadSplide2mobile() {
     gap: "16px",
     arrows: false,
     fixedWidth: "100%",
-    height: "512px",
-    autoHeight: true,
+    height: "480px",
   });
 
   splide2.mount();
