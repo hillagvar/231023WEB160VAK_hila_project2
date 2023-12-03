@@ -1254,6 +1254,52 @@ footer button img {
   width: calc(100% - 32px);
 }
 
+@media only screen and (max-width: 1199px) {
+
+  .hero {
+    background-position: left;
+    background-image: url("../images/tablet-hero.png");
+  }
+
+  .nav-content, .collection-menu-content, .newin-menu-content, .plussize-menu-content, .sustainability-menu-content, .main-content-1, .main-content-2, .footer-content, .hero-content, .product-content-1 {
+    width: 90%;
+  }
+
+  .carousel-content {
+    width: 95%;
+    margin-left: 5%;
+  }
+
+  .top-main-menu {
+    gap: 16px;
+  }
+
+  .top-main-menu a, .top-main-menu p {
+    font-size: 14px;
+  }
+
+  .top-right-menu {
+    gap: 6px;
+    padding-right: 0;
+  }
+
+  .top-right-menu a {
+    margin-right: 6px;
+  }
+
+  .nav-content > a {
+    width: 148px;
+  }
+
+  .nav-content {
+    margin: 20px auto 22px;
+  }
+
+  .logo {
+    width: 100%;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .top-bar p {
     font-size: 10px;
@@ -1271,6 +1317,14 @@ footer button img {
   }
 
   .logo {
+    width: 138px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav-content > a {
     width: 138px;
     position: absolute;
     top: 0;
