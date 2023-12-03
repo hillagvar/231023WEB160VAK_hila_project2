@@ -1231,6 +1231,11 @@ footer button img {
   width: 100%;
 }
 
+.splide__arrow svg {
+  height: 14px;
+  width: 14px;
+}
+
 #splide2 {
   display: flex;
   justify-content: space-between;
